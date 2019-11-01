@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:drawable="@drawable/valor_000" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_010" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_020" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_030" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_040" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_050" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_060" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_070" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_080" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_090" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_100" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_110" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_120" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_130" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_140" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_150" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_160" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_170" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_180" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_190" android:duration="50">  </item>
+<item android:drawable="@drawable/valor_200" android:duration="50">  </item>
+
+</animation-list>
