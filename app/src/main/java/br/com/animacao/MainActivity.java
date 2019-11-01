@@ -15,6 +15,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,30 +60,88 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                mostrador.setImageResource(R.drawable.valor_000);
+
                 for (int i =0; i<100;i ++) {
+
                     contador++;
 
-                    if (contador > 0 && contador < 4) {
-                        mostrador.setImageResource(R.drawable.valor_000);
-                        //SystemClock.sleep(1050);
+                    if (contador > 0 && contador < 30) {
+                        new Thread(new Runnable() {
+                            public void run() {
+                                mostrador.post(new Runnable() {
+                                    public void run() {
+                                        mostrador.setImageResource(R.drawable.valor_000);
+                                        Toast.makeText(MainActivity.this, "000", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        }).start();
                     }
-                    if (contador > 3 && contador < 8) {
-                        mostrador.setImageResource(R.drawable.valor_070);
-                        //SystemClock.sleep(1050);
+                    if (contador > 30 && contador < 60) {
+                        new Thread(new Runnable() {
+                            public void run() {
+                                mostrador.post(new Runnable() {
+                                    public void run() {
+                                        mostrador.setImageResource(R.drawable.valor_070);
+                                        Toast.makeText(MainActivity.this, "070", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        }).start();
                     }
 
-                    if (contador > 7 && contador < 20) {
-                        mostrador.setImageResource(R.drawable.valor_020);
-                        contador = 1;
-                        //SystemClock.sleep(1050);
+                    if (contador > 60 && contador < 100) {
+                        new Thread(new Runnable() {
+                            public void run() {
+                                mostrador.post(new Runnable() {
+                                    public void run() {
+                                        mostrador.setImageResource(R.drawable.valor_020);
+                                        Toast.makeText(MainActivity.this, "020", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        }).start();
                     }
 
-                    SystemClock.sleep(50);
+
+                    //SystemClock.sleep(50);
 
                 }
+
+//                for (int i =0; i<100;i ++) {
+//                    contador++;
+//
+//                    if (contador > 0 && contador < 4) {
+//                        mostrador.setImageResource(R.drawable.valor_000);
+//                        //SystemClock.sleep(1050);
+//                    }
+//                    if (contador > 3 && contador < 8) {
+//                        mostrador.setImageResource(R.drawable.valor_070);
+//                        //SystemClock.sleep(1050);
+//                    }
+//
+//                    if (contador > 7 && contador < 20) {
+//                        mostrador.setImageResource(R.drawable.valor_020);
+//                        contador = 1;
+//                        //SystemClock.sleep(1050);
+//                    }
+//
+//                    SystemClock.sleep(50);
+//
+//                }
 
             }
         });
 
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Paralelo paralelo = new Paralelo();
+        paralelo.setImageView(mostrador);
+        paralelo.run();
     }
 }
